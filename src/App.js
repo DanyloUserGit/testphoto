@@ -31,7 +31,7 @@ function App() {
         'Content-Type':'application/json'
         },
         body: JSON.stringify({userworks:[{
-          img:addWork,
+          img:webRef.current.getScreenshot(),
           date:data.timestamp.created_http,
           location: data.results[0].formatted
         }]})
@@ -52,7 +52,6 @@ function App() {
       {getUserWorks(2)}
       <Webcam ref={webRef} audio={false} className={"preview"} style={{display: cameraOn}} videoConstraints={videoConstraints} />
       <Camerabtn style={{display: cameraOn}} onclickHandle={()=>{
-        TakePhoto()
         navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
         setcameraOn("none");
       }}/>
