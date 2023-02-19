@@ -23,7 +23,7 @@ function App() {
     .then(response=>response.json())
     .then(data=>{
       let obj = data;
-      console.log(data.results[0]);
+      alert(data.results[0].formatted);
       console.log(latitude+","+longitude);
     })
   }; 
